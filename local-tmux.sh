@@ -19,7 +19,7 @@ cd $TMUX_TMP
 
 # download, extract, configure, and compile
 # libevent #
-wget -O libevent.tar.gz $LIBEVENT_URI
+wget --no-check-certificate -O libevent.tar.gz $LIBEVENT_URI
 echo "$LIBEVENT_SHA1 *libevent.tar.gz" | sha1sum -c -
 tar xvzf libevent.tar.gz
 cd libevent-2.0.22-stable
@@ -29,7 +29,7 @@ if [ "$INSTALL" = 1 ]; then make install; fi
 cd ..
 
 # ncurses  #
-wget -O ncurses.tar.gz $NCURSES_URI
+wget --no-check-certificate -O ncurses.tar.gz $NCURSES_URI
 echo "$NCURSES_SHA1 *ncurses.tar.gz" | sha1sum -c -
 tar xvzf ncurses.tar.gz
 cd ncurses-5.9
@@ -39,7 +39,7 @@ if [ "$INSTALL" = 1 ]; then make install; fi
 cd ..
 
 # tmux     #
-wget -O tmux.tar.gz $TMUX_URI
+wget --no-check-certificate -O tmux.tar.gz $TMUX_URI
 echo "$TMUX_SHA1 *tmux.tar.gz" | sha1sum -c -
 tar xvzf tmux.tar.gz
 cd tmux-1.9a
